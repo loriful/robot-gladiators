@@ -1,6 +1,6 @@
 // var playerName = 'Clank McKrank';
 var playerName = window.prompt("What is your robot's name?");
-var playerHealth = 100;
+var playerHealth = 40;
 var playerAttack = 10;
 var playerMoney = 10;
 
@@ -58,7 +58,16 @@ var fight = function(enemyName) {
 
 // run fight function to start game
 for (var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0){
+      // what round?
+      window.alert("Welcome to Robot Gladiators! Round " + (i+1));
+    // new enemey
     var pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
     fight(pickedEnemyName);
+  }
+  else {
+    window.alert("You have lost your robot in battle! Game Over!");
+    break;
+  }
 }
